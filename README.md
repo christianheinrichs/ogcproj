@@ -20,32 +20,31 @@ GoldSrc and Source engine games only.
 
 Currently supported are the following games:
 
-- GoldSrc
- - Counter-Strike
- - Counter-Strike: Condition Zero
- - Counter-Strike: Condition Zero - Deleted scenes
- - Deathmatch Classic
- - Day of Defeat
- - Half-Life
- - Half-Life: Blue Shift
- - Half-Life: Opposing Force
- - Ricochet
- - Team Fortress Classic
+GoldSrc
+- Counter-Strike
+- Counter-Strike: Condition Zero
+- Counter-Strike: Condition Zero - Deleted scenes
+- Deathmatch Classic
+- Day of Defeat
+- Half-Life
+- Half-Life: Blue Shift
+- Half-Life: Opposing Force
+- Ricochet
+- Team Fortress Classic
 
-
-- Source
- - Counter-Strike: Source
- - Day of Defeat: Source
- - Half-Life 2
- - Half-Life 2: Episode One
- - Half-Life 2: Episode Two
- - Half-Life 2: Lost Coast
- - Half-Life Deathmatch: Source
- - Left 4 Dead
- - Left 4 Dead 2
- - Portal
- - Portal 2
- - Team Fortress 2
+Source
+- Counter-Strike: Source
+- Day of Defeat: Source
+- Half-Life 2
+- Half-Life 2: Episode One
+- Half-Life 2: Episode Two
+- Half-Life 2: Lost Coast
+- Half-Life Deathmatch: Source
+- Left 4 Dead
+- Left 4 Dead 2
+- Portal
+- Portal 2
+- Team Fortress 2
 
 #### Considerations
 
