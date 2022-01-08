@@ -1,0 +1,12 @@
+Version 5.1.2022-r1
+- Initial commit
+
+Version 5.1.2022-r2
+- Fix list syntax in README.md
+
+Version 8.1.2022
+- Add missing keybind comments
+- Slightly reword existing comments
+- fresh-start.bat: Add missing comments
+- Add README as plaintext file
+- Add CHANGELOG

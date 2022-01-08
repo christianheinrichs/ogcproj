@@ -6,6 +6,7 @@ rem custom configuration files
 
 title FS script running
 
+rem Counter-Strike
 echo Counter-Strike: Emptying folder...
 del /q goldsrc\cs\*
 
@@ -19,6 +20,7 @@ del /q goldsrc\cscz\*
 echo Counter-Strike: Condition Zero - Done.
 echo.
 
+rem Counter-Strike: Condition Zero - Deleted scenes
 echo Counter-Strike: Condition Zero - Deleted scenes: Emptying folder...
 del /q goldsrc\csczds\*
 
