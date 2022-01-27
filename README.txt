@@ -32,6 +32,7 @@ GoldSrc
 - Team Fortress Classic
 
 Source
+- Counter-Strike: Global Offensive
 - Counter-Strike: Source
 - Day of Defeat: Source
 - Half-Life 2

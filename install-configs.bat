@@ -3,15 +3,15 @@
 rem This script installs all necessary configuration files into their rightful
 rem places
 
-title Config installation script
+title ogcproj: Configuration installation script running
 
 rem This script assumes that all GoldSrc and Source games are installed in the
 rem default Steam installation path; tweak if necessary
-set "steamdir=C:\Program Files (x86)\Steam"
+set "steamdir=C:\Program Files (x86)\Steam\steamapps\common"
 
 rem Uncomment the next line if any of the following games is installed in an
 rem alternate Steam library folder
-rem set "steamlibdir=S:\Users\User\SteamLibrary"
+rem set "steamlibdir=S:\Users\User\SteamLibrary\steamapps\common"
 
 rem GoldSrc section
 set "hl1dir=%steamdir%\Half-Life"
@@ -26,6 +26,7 @@ set "ricochetdir=%hl1dir%\ricochet"
 set "tfcdir=%hl1dir%\tfc"
 
 rem Source section
+set "csgodir=%steamdir%\Counter-Strike Global Offensive"
 set "cssdir=%steamdir%\Counter-Strike Source"
 set "dodsdir=%steamdir%\Day of Defeat Source"
 set "hl2dir=%steamdir%\Half-Life 2"
@@ -64,6 +65,35 @@ if exist "goldsrc\cscz\*.cfg" (
 )
 
 echo Counter-Strike: Condition Zero - Done.
+echo.
+
+rem Counter-Strike: Global Offensive
+
+rem Install user configuration
+if exist "source\csgo\*.cfg" (
+	echo Counter-Strike: Global Offensive - Installing custom configuration
+	copy "source\csgo\*.cfg" "%csgodir%\cstrike\cfg"
+	echo.
+) else (
+	echo Counter-Strike: Global Offensive - Configuration files not found. Skipping...
+	echo.
+)
+
+rem This section is currently broken, since I don’t know how to reliably
+rem query the userdata ID, so instead I replaced it with an asterisk until
+rem a solution is found
+
+rem Install video.txt
+rem if exist "source\csgo\video.txt" (
+rem 	echo Counter-Strike: Global Offensive - Installing video configuration file
+rem 	copy "source\csgo\video.txt" "%steamdir%\userdata\*\730\local\cfg"
+rem 	echo.
+rem ) else (
+rem 	echo Counter-Strike: Global Offensive - Video configuration file not found. Skipping...
+rem 	echo.
+rem )
+
+echo Counter-Strike: Global Offensive - Done.
 echo.
 
 rem Counter-Strike: Source
@@ -363,6 +393,9 @@ if exist "source\l4d1\video.txt" (
 	echo.
 )
 
+echo Left 4 Dead: Done.
+echo.
+
 rem Left 4 Dead 2
 
 rem Install autoexec.cfg
@@ -384,6 +417,9 @@ if exist "source\l4d1\video.txt" (
 	echo Left 4 Dead 2: Video configuration file not found. Skipping...
 	echo.
 )
+
+echo Left 4 Dead 2: Done.
+echo.
 
 rem Portal
 

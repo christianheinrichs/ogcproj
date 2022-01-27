@@ -10,3 +10,11 @@ Version 8.1.2022
 - fresh-start.bat: Add missing comments
 - Add README as plaintext file
 - Add CHANGELOG
+
+Version 28.1.2022
+- Add ‘Counter-Strike: Global Offensive’
+- Make batch script titles more descriptive
+- Correct Steam path variables
+- Counter-Strike: Source - Fix folder path
+- Add missing echo commands for ‘Left 4 Dead’ and ‘Left 4 Dead 2’ in install
+  script

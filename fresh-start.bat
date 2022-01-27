@@ -4,7 +4,7 @@ rem This script empties the folders by deleting all files in them
 rem It enables the user to have a ‘fresh start’, so they can use their own
 rem custom configuration files
 
-title FS script running
+title ogcproj: FS script running
 
 rem Counter-Strike
 echo Counter-Strike: Emptying folder...
@@ -25,6 +25,13 @@ echo Counter-Strike: Condition Zero - Deleted scenes: Emptying folder...
 del /q goldsrc\csczds\*
 
 echo Counter-Strike: Condition Zero - Deleted scenes: Done.
+echo.
+
+rem Counter-Strike: Global Offensive
+echo Counter-Strike: Global Offensive - Emptying folder...
+del /q source\csgo\*
+
+echo Counter-Strike: Global Offensive - Done.
 echo.
 
 rem Counter-Strike: Source

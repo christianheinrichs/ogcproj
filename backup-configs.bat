@@ -2,19 +2,19 @@
 
 rem This script backs up configuration files
 
-title Config backup script
+title ogcproj: Configuration backup script running
 
 rem Keep old backups?
 set "keepoldfiles=yes"
 
 rem This script assumes that all GoldSrc and Source games are installed in the
 rem default Steam installation path; tweak if necessary
-set "steamdir=C:\Program Files (x86)\Steam"
+set "steamdir=C:\Program Files (x86)\Steam\steamapps\common"
 
 rem Uncomment the next line if any of the following games is installed in an
-rem alternate Steam library folder.
-rem If that’s the case, the following variables need to be adjusted as well
-rem set "steamlibdir=S:\Users\User\SteamLibrary"
+rem alternate Steam library folder. If that’s the case, the following variables
+rem need to be adjusted as well
+rem set "steamlibdir=S:\Users\User\SteamLibrary\steamapps\common"
 
 rem GoldSrc section
 rem Since pretty much every game or mod in this case is based on HL1 root,
@@ -31,6 +31,7 @@ set "ricochetdir=%hl1dir%\ricochet"
 set "tfcdir=%hl1dir%\tfc"
 
 rem Source section
+set "csgodir=%steamdir%\Counter-Strike Global Offensive"
 set "cssdir=%steamdir%\Counter-Strike Source"
 set "dodsdir=%steamdir%\Day of Defeat Source"
 set "hl2dir=%steamdir%\Half-Life 2"
@@ -120,21 +121,70 @@ if exist "%csczdsdir%\userconfig.cfg" (
 echo Counter-Strike: Condition Zero - Deleted scenes: Done.
 echo.
 
+rem Counter-Strike: Global Offensive
+
+rem Back up autoexec configuration
+if exist "%csgodir%\csgo\cfg\autoexec.cfg" (
+	if "%keepoldfiles%" == "yes" (
+		echo Counter-Strike: Global Offensive - Backing up old autoexec configuration
+		copy "source\csgo\autoexec.cfg" "source\csgo\autoexec.cfg.bak"
+		echo.
+
+		echo Counter-Strike: Global Offensive - Backing up autoexec configuration
+		copy "%csgodir%\csgo\cfg\autoexec.cfg" "source\csgo"
+		echo.
+	) else if "%keepoldfiles%" == "no" (
+		echo Counter-Strike: Global Offensive - Backing up autoexec configuration
+		copy "%csgodir%\csgo\cfg\autoexec.cfg" "source\csgo"
+		echo.
+	)
+) else (
+	echo Counter-Strike: Global Offensive - Autoexec configuration not found. Skipping...
+	echo.
+)
+
+rem This section is currently broken, since I don’t know how to reliably
+rem query the userdata ID, so instead I replaced it with an asterisk until
+rem a solution is found
+
+rem Backup video configuration
+rem if exist "%steamdir%\userdata\*\730\local\cfg\video.txt" (
+rem 	if "%keepoldfiles%" == "yes" (
+rem 		echo Counter-Strike: Global Offensive - Backing up old video configuration
+rem 		copy "source\csgo\video.txt" "source\csgo\video.txt.bak"
+rem 		echo.
+rem
+rem 		echo Counter-Strike: Global Offensive - Backing up video configuration
+rem 		copy "%steamdir%\userdata\*\730\local\cfg\video.txt" "source\csgo"
+rem 		echo.
+rem 	) else if "%keepoldfiles%" == "no" (
+rem 		echo Counter-Strike: Global Offensive - Backing up video configuration
+rem 		copy "%steamdir%\userdata\*\730\local\cfg\video.txt" "source\csgo"
+rem 		echo.
+rem 	)
+rem ) else (
+rem 	echo Counter-Strike: Global Offensive - Video configuration not found. Skipping...
+rem 	echo.
+rem )
+
+echo Counter-Strike: Global Offensive - Done.
+echo.
+
 rem Counter-Strike: Source
 
 rem Back up autoexec configuration
-if exist "%cssdir%\autoexec.cfg" (
+if exist "%cssdir%\cstrike\cfg\autoexec.cfg" (
 	if "%keepoldfiles%" == "yes" (
 		echo Counter-Strike: Source - Backing up old autoexec configuration
 		copy "source\css\autoexec.cfg" "source\css\autoexec.cfg.bak"
 		echo.
 
 		echo Counter-Strike: Source - Backing up autoexec configuration
-		copy "%cssdir%\autoexec.cfg" "source\css"
+		copy "%cssdir%\cstrike\cfg\autoexec.cfg" "source\css"
 		echo.
 	) else if "%keepoldfiles%" == "no" (
 		echo Counter-Strike: Source - Backing up autoexec configuration
-		copy "%cssdir%\autoexec.cfg" "source\css"
+		copy "%cssdir%\cstrike\cfg\autoexec.cfg" "source\css"
 		echo.
 	)
 ) else (
