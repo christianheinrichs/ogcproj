@@ -1,8 +1,11 @@
 @echo off
 
-rem This script empties the folders by deleting all files in them
-rem It enables the user to have a ‘fresh start’, so they can use their own
-rem custom configuration files
+rem ogcproj: fresh-start.bat
+rem Last modified on 10 February 2022
+
+rem This script empties the folders by deleting all files in them. It enables
+rem the user to have a ‘fresh start’, so they can use their own custom
+rem configuration files
 
 title ogcproj: FS script running
 

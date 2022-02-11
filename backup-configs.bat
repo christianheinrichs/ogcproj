@@ -1,5 +1,8 @@
 @echo off
 
+rem ogcproj: backup-configs.bat
+rem Last modified on 10 February 2022
+
 rem This script backs up configuration files
 
 title ogcproj: Configuration backup script running

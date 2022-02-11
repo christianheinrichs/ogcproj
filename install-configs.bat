@@ -1,5 +1,8 @@
 @echo off
 
+rem ogcproj: install-configs.bat
+rem Last modified on 10 February 2022
+
 rem This script installs all necessary configuration files into their rightful
 rem places
 

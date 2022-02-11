@@ -18,3 +18,9 @@ Version 28.1.2022
 - Counter-Strike: Source - Fix folder path
 - Add missing echo commands for ‘Left 4 Dead’ and ‘Left 4 Dead 2’ in install
   script
+
+Version 11.2.2022
+- Add project name, batch file name and modification date
+- Counter-Strike: Global Offensive - Fix KP_MULTIPLY buybind
+- Counter-Strike: Global Offensive - Remove violence cvars
+- Team Fortress 2: Add autoexec loading console message
