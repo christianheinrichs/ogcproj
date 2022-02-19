@@ -1,7 +1,7 @@
 @echo off
 
 rem ogcproj: backup-configs.bat
-rem Last modified on 10 February 2022
+rem Last modified on 19 February 2022
 
 rem This script backs up configuration files
 
@@ -9,6 +9,9 @@ title ogcproj: Configuration backup script running
 
 rem Keep old backups?
 set "keepoldfiles=yes"
+
+rem Game root directory
+set "gamerootdir="
 
 rem This script assumes that all GoldSrc and Source games are installed in the
 rem default Steam installation path; tweak if necessary
@@ -32,6 +35,9 @@ set "hl1bsdir=%hl1dir%\bshift"
 set "hl1ofdir=%hl1dir%\gearbox"
 set "ricochetdir=%hl1dir%\ricochet"
 set "tfcdir=%hl1dir%\tfc"
+
+rem Quake engine section
+set "q3dir=%gamerootdir%\Quake III Arena"
 
 rem Source section
 set "csgodir=%steamdir%\Counter-Strike Global Offensive"
@@ -195,8 +201,8 @@ if exist "%cssdir%\cstrike\cfg\autoexec.cfg" (
 	echo.
 )
 
-rem Backup registry keys
-echo Counter-Strike: Source - Backing up registry keys
+rem Backup registry key
+echo Counter-Strike: Source - Backing up registry key
 reg export "HKCU\SOFTWARE\Valve\Source\cstrike\Settings" "source\css\css.reg" /y
 
 echo Counter-Strike: Source - Done.
@@ -249,8 +255,8 @@ if exist "%dodsdir%\dod\cfg\autoexec.cfg" (
 	echo.
 )
 
-rem Backup registry keys
-echo Day of Defeat: Source - Backing up registry keys
+rem Backup registry key
+echo Day of Defeat: Source - Backing up registry key
 reg export "HKCU\SOFTWARE\Valve\Source\dod\Settings" "source\dods\dods.reg" /y
 
 echo Day of Defeat: Source - Done.
@@ -303,8 +309,8 @@ if exist "%hl1dir%\userconfig.cfg" (
 	echo.
 )
 
-rem Backup registry keys
-echo Half-Life: Backing up registry keys
+rem Backup registry key
+echo Half-Life: Backing up registry key
 reg export "HKCU\SOFTWARE\Valve\Half-Life\Settings" "source\hl1\hl1.reg" /y
 
 echo Half-Life: Done.
@@ -382,8 +388,8 @@ if exist "%hl2dir%\hl2\cfg\autoexec.cfg" (
 	echo.
 )
 
-rem Backup registry keys
-echo Half-Life 2: Backing up registry keys
+rem Backup registry key
+echo Half-Life 2: Backing up registry key
 reg export "HKCU\SOFTWARE\Valve\Source\hl2\Settings" "source\hl2\hl2.reg" /y
 
 echo Half-Life 2: Done.
@@ -411,8 +417,8 @@ if exist "%hl2dmdir%\hl2mp\cfg\autoexec.cfg" (
 	echo.
 )
 
-rem Backup registry keys
-echo Half-Life 2: Deathmatch - Backing up registry keys
+rem Backup registry key
+echo Half-Life 2: Deathmatch - Backing up registry key
 reg export "HKCU\SOFTWARE\Valve\Source\hl2mp\Settings" "source\hl2dm\hl2dm.reg" /y
 
 echo Half-Life 2: Deathmatch - Done.
@@ -440,8 +446,8 @@ if exist "%hl2ep1dir%\cfg\autoexec.cfg" (
 	echo.
 )
 
-rem Backup registry keys
-echo Half-Life 2: Episode One - Backing up registry keys
+rem Backup registry key
+echo Half-Life 2: Episode One - Backing up registry key
 reg export "HKCU\SOFTWARE\Valve\Source\episodic\Settings" "source\hl2ep1\hl2ep1.reg" /y
 
 echo Half-Life 2: Episode One - Done.
@@ -494,8 +500,8 @@ if exist "%hl2lcdir%\cfg\autoexec.cfg" (
 	echo.
 )
 
-rem Backup registry keys
-echo Half-Life 2: Lost Coast - Backing up registry keys
+rem Backup registry key
+echo Half-Life 2: Lost Coast - Backing up registry key
 reg export "HKCU\SOFTWARE\Valve\Source\lostcoast\Settings" "source\hl2lc\hl2lc.reg" /y
 
 echo Half-Life 2: Lost Coast - Done.
@@ -523,8 +529,8 @@ if exist "%hldmsdir%\hl1mp\cfg\autoexec.cfg" (
 	echo.
 )
 
-rem Backup registry keys
-echo Half-Life Deathmatch: Source - Backing up registry keys
+rem Backup registry key
+echo Half-Life Deathmatch: Source - Backing up registry key
 reg export "HKCU\SOFTWARE\Valve\Source\hl1mp\Settings" "source\hldms\hldms.reg" /y
 
 echo Half-Life Deathmatch: Source - Done.
@@ -642,8 +648,8 @@ if exist "%portaldir%\portal\cfg\autoexec.cfg" (
 	echo.
 )
 
-rem Backup registry keys
-echo Portal: Backing up registry keys
+rem Backup registry key
+echo Portal: Backing up registry key
 reg export "HKCU\SOFTWARE\Valve\Source\portal\Settings" "source\portal\portal.reg" /y
 
 echo Portal: Done.
@@ -694,6 +700,28 @@ if exist "%portal2dir%\update\cfg\video.txt" (
 echo Portal 2: Done.
 echo
 
+rem Quake III
+
+rem Backup configuration files
+if exist "%q3dir%\baseq3\*.cfg" (
+	if "%keepoldfiles%" == "yes" (
+		echo Quake III: Backing up old user configuration
+		copy "quake\q3\*.cfg" "quake\q3\*.cfg.bak"
+		echo.
+
+		echo Quake III: Backing up user configuration
+		copy "%q3dir%\baseq3\*.cfg" "quake\q3"
+		echo.
+	) else if "%keepoldfiles%" == "no" (
+		echo Quake III: Backing up user configuration
+		copy "%q3dir%\baseq3\*.cfg" "quake\q3"
+		echo.
+	)
+) else (
+	echo Quake III: User configuration not found. Skipping...
+	echo.
+)
+
 rem Ricochet
 
 rem Backup user configuration
@@ -741,8 +769,8 @@ if exist "%tf2dir%\tf\cfg\autoexec.cfg" (
 	echo.
 )
 
-rem Backup registry keys
-echo Team Fortress 2: Backing up registry keys
+rem Backup registry key
+echo Team Fortress 2: Backing up registry key
 reg export "HKCU\SOFTWARE\Valve\Source\tf\Settings" "source\tf2\tf2.reg" /y
 
 rem Backup class configurations

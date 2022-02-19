@@ -1,0 +1,6 @@
+- Counter-Strike: Global Offensive - Fix video.txt installation
+
+- Port the batch files to Linux shell scripts. Decide whether to use ‘bash’ or
+  ‘sh’ syntax
+
+- Port the batch files to Python 3

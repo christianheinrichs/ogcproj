@@ -24,3 +24,11 @@ Version 11.2.2022
 - Counter-Strike: Global Offensive - Fix KP_MULTIPLY buybind
 - Counter-Strike: Global Offensive - Remove violence cvars
 - Team Fortress 2: Add autoexec loading console message
+
+Version 19.2.2022
+- Add ‘Quake III’
+- Counter-Strike: Global Offensive - Add competitive user configuration
+- Add licensing information
+- Refer to ‘registry key’ instead of ‘registry keys’
+- Enforce double quotation mark usage
+- Fix typo in CS:GO autoexec configuration

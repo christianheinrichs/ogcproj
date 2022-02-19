@@ -1,12 +1,15 @@
 @echo off
 
 rem ogcproj: install-configs.bat
-rem Last modified on 10 February 2022
+rem Last modified on 19 February 2022
 
 rem This script installs all necessary configuration files into their rightful
 rem places
 
 title ogcproj: Configuration installation script running
+
+rem Game root directory
+set "gamerootdir="
 
 rem This script assumes that all GoldSrc and Source games are installed in the
 rem default Steam installation path; tweak if necessary
@@ -27,6 +30,9 @@ set "hl1bsdir=%hl1dir%\bshift"
 set "hl1ofdir=%hl1dir%\gearbox"
 set "ricochetdir=%hl1dir%\ricochet"
 set "tfcdir=%hl1dir%\tfc"
+
+rem Quake engine section
+set "q3dir=%gamerootdir%\Quake III Arena"
 
 rem Source section
 set "csgodir=%steamdir%\Counter-Strike Global Offensive"
@@ -82,9 +88,9 @@ if exist "source\csgo\*.cfg" (
 	echo.
 )
 
-rem This section is currently broken, since I don’t know how to reliably
-rem query the userdata ID, so instead I replaced it with an asterisk until
-rem a solution is found
+rem This section is currently broken, since I don’t know how to reliably query
+rem the userdata ID, so instead I replaced it with an asterisk until a solution
+rem is found
 
 rem Install video.txt
 rem if exist "source\csgo\video.txt" (
@@ -111,13 +117,13 @@ if exist "source\css\*.cfg" (
 	echo.
 )
 
-rem Install registry keys
+rem Install registry key
 if exist "source\css\*.reg" (
-	echo Counter-Strike: Source - Installing registry keys
+	echo Counter-Strike: Source - Installing registry key
 	reg import "source\css\*.reg"
 	echo.
 ) else (
-	echo Counter-Strike: Source - Registry keys file not found. Skipping...
+	echo Counter-Strike: Source - Registry key file not found. Skipping...
 	echo.
 )
 
@@ -149,13 +155,13 @@ if exist "source\dods\*.cfg" (
 	echo.
 )
 
-rem Install registry keys
+rem Install registry key
 if exist "source\dods\*.reg" (
-	echo Day of Defeat: Source - Installing registry keys
+	echo Day of Defeat: Source - Installing registry key
 	reg import "source\dods\*.reg"
 	echo.
 ) else (
-	echo Day of Defeat: Source - Registry keys file not found. Skipping...
+	echo Day of Defeat: Source - Registry key file not found. Skipping...
 	echo.
 )
 
@@ -187,13 +193,13 @@ if exist "goldsrc\hl1\*.cfg" (
 	echo.
 )
 
-rem Install registry keys
+rem Install registry key
 if exist "goldsrc\hl1\*.reg" (
 	reg import "goldsrc\hl1\*.reg"
-	echo Half-Life: Installing registry keys
+	echo Half-Life: Installing registry key
 	echo.
 ) else (
-	echo Half-Life: Registry keys not found. Skipping...
+	echo Half-Life: Registry key not found. Skipping...
 	echo.
 )
 
@@ -236,13 +242,13 @@ if exist "source\hl2\*.cfg" (
 	echo.
 )
 
-rem Install registry keys
+rem Install registry key
 if exist "source\hl2\*.reg" (
-	echo Half-Life 2: Installing registry keys
+	echo Half-Life 2: Installing registry key
 	reg import "source\hl2\*.reg"
 	echo.
 ) else (
-	echo Half-Life 2: Registry keys file not found. Skipping...
+	echo Half-Life 2: Registry key file not found. Skipping...
 	echo.
 )
 
@@ -261,13 +267,13 @@ if exist "source\hl2dm\*.cfg" (
 	echo.
 )
 
-rem Install registry keys
+rem Install registry key
 if exist "source\hl2dm\*.reg" (
-	echo Half-Life 2: Deathmatch - Installing registry keys
+	echo Half-Life 2: Deathmatch - Installing registry key
 	reg import "source\hl2dm\*.reg"
 	echo.
 ) else (
-	echo Half-Life 2: Deathmatch - Registry keys file not found. Skipping...
+	echo Half-Life 2: Deathmatch - Registry key file not found. Skipping...
 	echo.
 )
 
@@ -286,13 +292,13 @@ if exist "source\hl2ep1\*.cfg" (
 	echo.
 )
 
-rem Install registry keys
+rem Install registry key
 if exist "source\hl2ep1\*.reg" (
-	echo Half-Life 2: Episode One - Installing registry keys
+	echo Half-Life 2: Episode One - Installing registry key
 	reg import "source\hl2ep1\*.reg"
 	echo.
 ) else (
-	echo Half-Life 2: Episode One - Registry keys file not found. Skipping...
+	echo Half-Life 2: Episode One - Registry key file not found. Skipping...
 	echo.
 )
 
@@ -311,13 +317,13 @@ if exist "source\hl2ep2\*.cfg" (
 	echo.
 )
 
-rem Install registry keys
+rem Install registry key
 if exist "source\hl2ep2\*.reg" (
-	echo Half-Life 2: Episode Two - Installing registry keys
+	echo Half-Life 2: Episode Two - Installing registry key
 	reg import "source\hl2ep2\*.reg"
 	echo.
 ) else (
-	echo Half-Life 2: Episode Two - Registry keys file not found. Skipping...
+	echo Half-Life 2: Episode Two - Registry key file not found. Skipping...
 	echo.
 )
 
@@ -336,13 +342,13 @@ if exist "source\hl2lc\*.cfg" (
 	echo.
 )
 
-rem Install registry keys
+rem Install registry key
 if exist "source\hl2lc\*.reg" (
-	echo Half-Life 2: Lost Coast - Installing registry keys
+	echo Half-Life 2: Lost Coast - Installing registry key
 	reg import "source\hl2lc\*.reg"
 	echo.
 ) else (
-	echo Half-Life 2: Lost Coast - Registry keys file not found. Skipping...
+	echo Half-Life 2: Lost Coast - Registry key file not found. Skipping...
 	echo.
 )
 
@@ -361,13 +367,13 @@ if exist "source\hldms\*.cfg" (
 	echo.
 )
 
-rem Install registry keys
+rem Install registry key
 if exist "source\hldms\*.reg" (
-	echo Half-Life Deathmatch: Source - Installing registry keys
+	echo Half-Life Deathmatch: Source - Installing registry key
 	reg import "source\hldms\*.reg"
 	echo.
 ) else (
-	echo Half-Life Deathmatch: Source - Registry keys file not found. Skipping...
+	echo Half-Life Deathmatch: Source - Registry key file not found. Skipping...
 	echo.
 )
 
@@ -436,13 +442,13 @@ if exist "source\portal\*.cfg" (
 	echo.
 )
 
-rem Install registry keys
+rem Install registry key
 if exist "source\portal\*.reg" (
-	echo Portal: Installing registry keys
+	echo Portal: Installing registry key
 	reg import "source\portal\*.reg"
 	echo.
 ) else (
-	echo Portal: Registry keys file not found. Skipping...
+	echo Portal: Registry key file not found. Skipping...
 	echo.
 )
 
@@ -474,6 +480,21 @@ if exist "source\portal2\video.txt" (
 echo Portal 2: Done.
 echo.
 
+rem Quake III
+
+rem Install .cfg files
+if exist "quake\q3\*.cfg" (
+	echo Quake III: Installing custom configuration
+	copy "quake\q3\*.cfg" "%q3dir%\baseq3"
+	echo.
+) else (
+	echo Quake III: Configuration files not found. Skipping...
+	echo.
+)
+
+echo Quake III: Done.
+echo.
+
 rem Ricochet
 
 rem Install configuration files
@@ -501,13 +522,13 @@ if exist "source\tf2\*.cfg" (
 	echo.
 )
 
-rem Install registry keys
+rem Install registry key
 if exist "source\tf2\*.reg" (
-	echo Team Fortress 2: Installing registry keys
+	echo Team Fortress 2: Installing registry key
 	reg import "source\tf2\*.reg"
 	echo.
 ) else (
-	echo Team Fortress 2: Registry keys file not found. Skipping...
+	echo Team Fortress 2: Registry key file not found. Skipping...
 	echo.
 )
 

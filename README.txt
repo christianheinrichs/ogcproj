@@ -14,8 +14,7 @@ Which is what this project is all about. By using this tool you can backup your
 configuration files and install them again without relying on any cloud services
 or manual copy-and-paste operations. This project focuses on open, human
 readable formats like .cfg, .json and .txt. It does not bother with binary,
-encrypted or obfuscated configuration files. At this moment, it focuses on
-GoldSrc and Source engine games only.
+encrypted or obfuscated configuration files.
 
 Currently supported are the following games:
 
@@ -30,6 +29,9 @@ GoldSrc
 - Half-Life: Opposing Force
 - Ricochet
 - Team Fortress Classic
+
+Quake engine
+- Quake III
 
 Source
 - Counter-Strike: Global Offensive
@@ -58,8 +60,8 @@ additional variables yourself, if, for example you have two or more additional
 Steam library folders.
 
 On a conclusional note, this project is not perfect. Some things might or might
-not work. Something might break. As always, keep multiple backups as to not lose
-any configuration files.
+not work. Something might break. As always, keep multiple backups as to not
+lose any configuration files.
 
 How to instructions
 
@@ -67,6 +69,11 @@ How to instructions
 2. Run the ‘fresh-start.bat’ script
 3. Copy your .cfg backups into each respective folder
 4. Run the ‘install-configs.bat’ script
-5. Should you feel the need to backup your configuration files currently located
-in the according game installation folders, run ‘backup-configs.bat’ and they
-get copied to goldsrc/game and source/game/cfg
+5. Should you feel the need to backup your configuration files currently
+   located in the according game installation folders, run ‘backup-configs.bat’
+   and they get copied to goldsrc/game and source/game/cfg
+
+Licensing
+
+This project is licensed under the GNU GPL 3.0 license. To read it, please
+refer to the LICENSE document.
