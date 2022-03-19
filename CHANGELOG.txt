@@ -32,3 +32,6 @@ Version 19.2.2022
 - Refer to ‘registry key’ instead of ‘registry keys’
 - Enforce double quotation mark usage
 - Fix typo in CS:GO autoexec configuration
+
+Version 19.3.2022
+- Add bash script version of ‘fresh-start.bat’
