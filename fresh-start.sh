@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # ogcproj: fresh-start.sh
-# Last modified on 19 March 2022
+# Last modified on 1 June 2022
 
 # This script empties the folders by deleting all files in them. It enables the
 # user to have a ‘fresh start’, so they can use their own custom configuration
@@ -60,6 +60,12 @@ rm "goldsrc/dmc/*"
 
 printf "Deathmatch Classic: Done.\n\n"
 
+# Garry’s Mod
+printf "Garry's Mod: Emptying folder...\n"
+rm "source/gmod/*"
+
+printf "Garry's Mod: Done.\n\n"
+
 # Half-Life
 printf "Half-Life: Emptying folder...\n"
 rm "goldsrc/hl1/*"
@@ -114,6 +120,12 @@ rm "source/hl2dms/*"
 
 printf "Half-Life Deathmatch: Source - Done.\n\n"
 
+# Hexen II
+printf "Hexen II: Emptying folder\n"
+rm "h2se/h2/*"
+
+printf "Hexen II: Done.\n\n"
+
 # Left 4 Dead
 printf "Left 4 Dead: Emptying folder\n"
 rm "source/l4d1/*"
@@ -137,6 +149,12 @@ printf "Portal 2: Emptying folder\n"
 rm "source/portal2/*"
 
 printf "Portal 2: Done.\n\n"
+
+# Quake II
+printf "Quake II: Emptying folder\n"
+rm "quake/q2/*"
+
+printf "Quake II: Done.\n\n"
 
 # Quake III
 printf "Quake III: Emptying folder\n"

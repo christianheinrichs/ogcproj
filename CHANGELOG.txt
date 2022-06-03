@@ -35,3 +35,11 @@ Version 19.2.2022
 
 Version 19.3.2022
 - Add bash script version of ‘fresh-start.bat’
+
+Version 3.6.2022
+- Add ‘Garry’s Mod’
+- Add ‘Half-Life 2: Deathmatch’
+- Add ‘Hexen II’
+- Add ‘Quake II’
+- Update README files
+- Fix ‘Half-Life 2: Deathmatch’ path in install batch file

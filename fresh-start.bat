@@ -1,7 +1,7 @@
 @echo off
 
 rem ogcproj: fresh-start.bat
-rem Last modified on 19 February 2022
+rem Last modified on 1 June 2022
 
 rem This script empties the folders by deleting all files in them. It enables
 rem the user to have a ‘fresh start’, so they can use their own custom
@@ -67,6 +67,13 @@ del /q "goldsrc\dmc\*"
 echo Deathmatch Classic: Done.
 echo.
 
+rem Garry’s Mod
+echo Garry's Mod: Emptying folder...
+del /q "source\gmod\*"
+
+echo Garry's Mod: Done.
+echo.
+
 rem Half-Life
 echo Half-Life: Emptying folder...
 del /q "goldsrc\hl1\*"
@@ -128,6 +135,13 @@ del /q "source\hl2dms\*"
 echo Half-Life Deathmatch: Source - Done.
 echo.
 
+rem Hexen II
+echo Hexen II: Emptying folder
+del /q "h2se\h2\*"
+
+echo Hexen II: Done.
+echo.
+
 rem Left 4 Dead
 echo Left 4 Dead: Emptying folder
 del /q "source\l4d1\*"
@@ -154,6 +168,13 @@ echo Portal 2: Emptying folder
 del /q "source\portal2\*"
 
 echo Portal 2: Done.
+echo.
+
+rem Quake II
+echo Quake II: Emptying folder
+del /q "quake\q2\*"
+
+echo Quake II: Done.
 echo.
 
 rem Quake III

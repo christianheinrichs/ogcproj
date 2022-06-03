@@ -1,7 +1,7 @@
 @echo off
 
 rem ogcproj: backup-configs.bat
-rem Last modified on 19 February 2022
+rem Last modified on 1 June 2022
 
 rem This script backs up configuration files
 
@@ -36,13 +36,18 @@ set "hl1ofdir=%hl1dir%\gearbox"
 set "ricochetdir=%hl1dir%\ricochet"
 set "tfcdir=%hl1dir%\tfc"
 
+rem Hexen II software engine
+set "h2dir=%gamerootdir%\HeXen II"
+
 rem Quake engine section
+set "q2dir=%gamerootdir%\Quake II"
 set "q3dir=%gamerootdir%\Quake III Arena"
 
 rem Source section
 set "csgodir=%steamdir%\Counter-Strike Global Offensive"
 set "cssdir=%steamdir%\Counter-Strike Source"
 set "dodsdir=%steamdir%\Day of Defeat Source"
+set "gmoddir=%steamdir%\GarrysMod"
 set "hl2dir=%steamdir%\Half-Life 2"
 set "hl2dmdir=%steamdir%\Half-Life 2 Deathmatch"
 set "hl2ep1dir=%hl2dir%\episodic"
@@ -285,6 +290,35 @@ if exist "%dmcdir%\userconfig.cfg" (
 )
 
 echo Deathmatch Classic: Done.
+echo.
+
+rem Garry’s Mod
+
+rem Back up autoexec configuration
+if exist "%gmoddir%\garrysmod\cfg\autoexec.cfg" (
+	if "%keepoldfiles%" == "yes" (
+		echo Garry's Mod: Backing up old autoexec configuration
+		copy "source\gmod\autoexec.cfg" "source\gmod\autoexec.cfg.bak"
+		echo.
+
+		echo Garry's Mod: Backing up autoexec configuration
+		copy "%gmoddir%\garrysmod\cfg\autoexec.cfg" "source\gmod"
+		echo.
+	) else if "%keepoldfiles%" == "no" (
+		echo Garry's Mod: Backing up autoexec configuration
+		copy "%gmoddir%\garrysmod\cfg\autoexec.cfg" "source\gmod"
+		echo.
+	)
+) else (
+	echo Garry's Mod: Autoexec configuration not found. Skipping...
+	echo.
+)
+
+rem Backup registry key
+echo Garry's Mod: Backing up registry key
+reg export "HKCU\SOFTWARE\Valve\Source\garrysmod\Settings" "source\gmod\gmod.reg" /y
+
+echo Garry's Mod: Done.
 echo.
 
 rem Half-Life
@@ -536,6 +570,28 @@ reg export "HKCU\SOFTWARE\Valve\Source\hl1mp\Settings" "source\hldms\hldms.reg" 
 echo Half-Life Deathmatch: Source - Done.
 echo.
 
+rem Hexen II
+
+rem Backup configuration files
+if exist "%h2dir%\data1\*.cfg" (
+	if "%keepoldfiles%" == "yes" (
+		echo Hexen II: Backing up old user configuration
+		copy "h2se\h2\*.cfg" "h2se\h2\*.cfg.bak"
+		echo.
+
+		echo Hexen II: Backing up user configuration
+		copy "%h2dir%\data1\*.cfg" "h2se\h2"
+		echo.
+	) else if "%keepoldfiles%" == "no" (
+		echo Hexen II: Backing up user configuration
+		copy "%h2dir%\data1\*.cfg" "h2se\h2"
+		echo.
+	)
+) else (
+	echo Hexen II: User configuration not found. Skipping...
+	echo.
+)
+
 rem Left 4 Dead
 
 rem Back up user configuration
@@ -699,6 +755,28 @@ if exist "%portal2dir%\update\cfg\video.txt" (
 
 echo Portal 2: Done.
 echo
+
+rem Quake II
+
+rem Backup configuration files
+if exist "%q2dir%\baseq2\*.cfg" (
+	if "%keepoldfiles%" == "yes" (
+		echo Quake II: Backing up old user configuration
+		copy "quake\q2\*.cfg" "quake\q2\*.cfg.bak"
+		echo.
+
+		echo Quake II: Backing up user configuration
+		copy "%q2dir%\baseq2\*.cfg" "quake\q2"
+		echo.
+	) else if "%keepoldfiles%" == "no" (
+		echo Quake II: Backing up user configuration
+		copy "%q2dir%\baseq2\*.cfg" "quake\q2"
+		echo.
+	)
+) else (
+	echo Quake II: User configuration not found. Skipping...
+	echo.
+)
 
 rem Quake III
 

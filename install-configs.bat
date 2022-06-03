@@ -1,7 +1,7 @@
 @echo off
 
 rem ogcproj: install-configs.bat
-rem Last modified on 19 February 2022
+rem Last modified on 1 June 2022
 
 rem This script installs all necessary configuration files into their rightful
 rem places
@@ -31,13 +31,18 @@ set "hl1ofdir=%hl1dir%\gearbox"
 set "ricochetdir=%hl1dir%\ricochet"
 set "tfcdir=%hl1dir%\tfc"
 
+rem Hexen II software engine
+set "h2dir=%gamerootdir%\HeXen II"
+
 rem Quake engine section
+set "q2dir=%gamerootdir%\Quake II"
 set "q3dir=%gamerootdir%\Quake III Arena"
 
 rem Source section
 set "csgodir=%steamdir%\Counter-Strike Global Offensive"
 set "cssdir=%steamdir%\Counter-Strike Source"
 set "dodsdir=%steamdir%\Day of Defeat Source"
+set "gmoddir=%steamdir%\GarrysMod"
 set "hl2dir=%steamdir%\Half-Life 2"
 set "hl2dmdir=%steamdir%\Half-Life 2 Deathmatch"
 set "hl2ep1dir=%hl2dir%\episodic"
@@ -181,6 +186,31 @@ if exist "goldsrc\dmc\*.cfg" (
 echo Deathmatch Classic: Done.
 echo.
 
+rem Garry’s Mod
+
+rem Install user configuration
+if exist "source\gmod\*.cfg" (
+	echo Garry's Mod: Installing custom configuration
+	copy "source\gmod\*.cfg" "%gmoddir%\garrysmod\cfg"
+	echo.
+) else (
+	echo Garry's Mod: Configuration files not found. Skipping...
+	echo.
+)
+
+rem Install registry key
+if exist "source\gmod\*.reg" (
+	echo Garry's Mod: Installing registry key
+	reg import "source\gmod\*.reg"
+	echo.
+) else (
+	echo Garry's Mod: Registry key file not found. Skipping...
+	echo.
+)
+
+echo Garry's Mod: Done.
+echo.
+
 rem Half-Life
 
 rem Install user configuration
@@ -260,7 +290,7 @@ rem Half-Life 2: Deathmatch
 rem Install user configuration
 if exist "source\hl2dm\*.cfg" (
 	echo Half-Life 2: Deathmatch - Installing custom configuration
-	copy "source\hl2dm\*.cfg" "%hl2dir%\hl2\cfg"
+	copy "source\hl2dm\*.cfg" "%hl2dmdir%\hl2mp\cfg"
 	echo.
 ) else (
 	echo Half-Life 2: Deathmatch - Configuration files not found. Skipping...
@@ -380,6 +410,21 @@ if exist "source\hldms\*.reg" (
 echo Half-Life Deathmatch: Source - Done.
 echo.
 
+rem Hexen II
+
+rem Install .cfg files
+if exist "h2se\h2\*.cfg" (
+	echo Hexen II: Installing custom configuration
+	copy "h2se\h2\*.cfg" "%h2dir%\data1"
+	echo.
+) else (
+	echo Hexen II: Configuration files not found. Skipping...
+	echo.
+)
+
+echo Hexen II: Done.
+echo.
+
 rem Left 4 Dead
 
 rem Install autoexec.cfg
@@ -478,6 +523,21 @@ if exist "source\portal2\video.txt" (
 )
 
 echo Portal 2: Done.
+echo.
+
+rem Quake II
+
+rem Install .cfg files
+if exist "quake\q2\*.cfg" (
+	echo Quake II: Installing custom configuration
+	copy "quake\q2\*.cfg" "%q2dir%\baseq2"
+	echo.
+) else (
+	echo Quake II: Configuration files not found. Skipping...
+	echo.
+)
+
+echo Quake II: Done.
 echo.
 
 rem Quake III

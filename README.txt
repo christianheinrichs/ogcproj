@@ -18,7 +18,7 @@ encrypted or obfuscated configuration files.
 
 Currently supported are the following games:
 
-GoldSrc
+GoldSrc engine
 - Counter-Strike
 - Counter-Strike: Condition Zero
 - Counter-Strike: Condition Zero - Deleted scenes
@@ -30,14 +30,20 @@ GoldSrc
 - Ricochet
 - Team Fortress Classic
 
+Hexen II software engine
+- Hexen II
+
 Quake engine
+- Quake II
 - Quake III
 
-Source
+Source engine
 - Counter-Strike: Global Offensive
 - Counter-Strike: Source
 - Day of Defeat: Source
+- Garry’s Mod
 - Half-Life 2
+- Half-Life 2: Deathmatch
 - Half-Life 2: Episode One
 - Half-Life 2: Episode Two
 - Half-Life 2: Lost Coast
@@ -50,14 +56,14 @@ Source
 
 Considerations
 
-Make sure to check your GoldSrc and Source games installation paths and compare
-them to the ones in the script, because depending on your configuration you
-might for example have Counter-Strike installed in the default Steam directory,
-yet Counter-Strike: Source or Half-Life 2 in a custom Steam library folder. The
-relevant variables you want to look for are %steamdir% and %steamlibdir% in
-the backup and install script. If you know what you’re doing, you can define
-additional variables yourself, if, for example you have two or more additional
-Steam library folders.
+Make sure to check your ‘GoldSrc’ and ‘Source’ games installation paths and
+compare them to the ones in the script, because depending on your configuration
+you might for example have ‘Counter-Strike’ installed in the default Steam
+directory, yet ‘Counter-Strike: Source’ or ‘Half-Life 2’ in a custom Steam
+library folder. The relevant variables you want to look for are %steamdir% and
+%steamlibdir% in the backup and install script. If you know what you’re doing,
+you can define additional variables yourself, if, for example you have two or
+more additional Steam library folders.
 
 On a conclusional note, this project is not perfect. Some things might or might
 not work. Something might break. As always, keep multiple backups as to not
