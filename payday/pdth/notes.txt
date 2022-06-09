@@ -1,0 +1,39 @@
+Render settings:
+
+XML section d3d_device:
+- GPU adapter: adapter = "{string}"
+- Adapter index: adapter_index = "{integer}"
+- Resolution: resolution = "{width integer} {height integer}"
+- Fullscreen: windowed = "{boolean}"
+  - Enabled: false
+  - Disabled: true
+- Monitor refresh rate: refresh_rate = "{integer}"
+- Aspect ratio: aspect_ratio = "{float}"
+  - Instead of using the {integer}:{integer} format, float values are used:
+    - 4:3 = 1.33333
+    - 5:4 = 1.25
+    - 16:9 = 1.77778
+- Vertical synchronisation: v_sync = "{boolean integer}"
+  - Enabled: 1
+  - Disabled: 0
+
+XML section render_settings:
+- Anisotropic filtering: max_anisotropy = "{integer}"
+  - Off: 1
+  - 2x: 2
+  - 4x: 4
+  - 8x: 8
+  - 16x: 16
+- Texture quality: texture_quality_default = "{string}"
+  - Very low: very low
+  - Low: low
+  - Medium: medium
+  - High: high
+
+Unfortunately, the rest of the settings is saved in what I can only assume is a
+binary format with the .sav file ending. To be more precise, the file in
+question is save000.sav. So there is no reason to add the save000.sav file to
+the open game configuration project.
+
+A local cloud save copy of the mentioned file is saved in:
+C:\Program Files (x86)\Steam\userdata\{steamuserid}\24240\remote

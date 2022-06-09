@@ -34,6 +34,8 @@ GoldSrc engine
 Hexen II software engine
 - Hexen II
 
+PAYDAY: The Heist (partial render settings support only)
+
 Quake engine
 - Quake II
 - Quake III

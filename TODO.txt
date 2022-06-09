@@ -1,5 +1,7 @@
 - Counter-Strike: Global Offensive - Fix video.txt installation
 
+- Find out game engine name of ‘PAYDAY: The Heist’
+
 - Port the batch files to Linux shell scripts. Decide whether to use ‘bash’ or
   ‘sh’ syntax
 

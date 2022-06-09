@@ -1,7 +1,7 @@
 @echo off
 
 rem ogcproj: install-configs.bat
-rem Last modified on 1 June 2022
+rem Last modified on 8 June 2022
 
 rem This script installs all necessary configuration files into their rightful
 rem places
@@ -33,6 +33,9 @@ set "tfcdir=%hl1dir%\tfc"
 
 rem Hexen II software engine
 set "h2dir=%gamerootdir%\HeXen II"
+
+rem PAYDAY: The Heist
+set "pdthladdir=%localappdata%\PAYDAY"
 
 rem Quake engine section
 set "q2dir=%gamerootdir%\Quake II"
@@ -473,6 +476,21 @@ if exist "source\l4d1\video.txt" (
 )
 
 echo Left 4 Dead 2: Done.
+echo.
+
+rem PAYDAY: The Heist
+
+rem Install renderer_settings.xml
+if exist "payday\pdth\*.xml" (
+	echo PAYDAY: The Heist - Installing partial render settings configuration
+	copy "payday\pdth\*.xml" "%pdthladdir%"
+	echo.
+) else (
+	echo PAYDAY: The Heist - Partial render settings configuration not found. Skipping...
+	echo.
+)
+
+echo PAYDAY: The Heist - Done.
 echo.
 
 rem Portal

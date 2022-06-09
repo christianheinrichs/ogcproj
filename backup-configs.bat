@@ -1,7 +1,7 @@
 @echo off
 
 rem ogcproj: backup-configs.bat
-rem Last modified on 1 June 2022
+rem Last modified on 8 June 2022
 
 rem This script backs up configuration files
 
@@ -38,6 +38,9 @@ set "tfcdir=%hl1dir%\tfc"
 
 rem Hexen II software engine
 set "h2dir=%gamerootdir%\HeXen II"
+
+rem PAYDAY: The Heist
+set "pdthladdir=%localappdata%\PAYDAY"
 
 rem Quake engine section
 set "q2dir=%gamerootdir%\Quake II"
@@ -680,6 +683,31 @@ if exist "%l4d2dir%\left4dead2\cfg\video.txt" (
 )
 
 echo Left 4 Dead 2: Done.
+echo.
+
+rem PAYDAY: The Heist
+
+rem Back up partial render settings
+if exist "%pdthladdir%\*.xml" (
+	if "%keepoldfiles%" == "yes" (
+		echo PAYDAY: The Heist - Backing up old, partial render settings
+		copy "payday\pdth\*.xml" "payday\pdth\renderer_settings.xml.bak"
+		echo.
+
+		echo PAYDAY: The Heist - Backing up partial render settings
+		copy "%pdthladdir%\*.xml" "payday\pdth"
+		echo.
+	) else if "%keepoldfiles%" == "no" (
+		echo PAYDAY: The Heist - Backing up partial render settings
+		copy "%pdthladdir%\*.xml" "payday\pdth"
+		echo.
+	)
+) else (
+	echo PAYDAY: The Heist - Partial render settings not found. Skipping...
+	echo.
+)
+
+echo PAYDAY: The Heist - Done.
 echo.
 
 rem Portal

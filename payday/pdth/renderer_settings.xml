@@ -1,0 +1,14 @@
+<renderer_config>
+	<d3d_device
+		adapter_index = "0"
+		resolution = "1920 1080"
+		windowed = "false"
+		refresh_rate = "144"
+		aspect_ratio = "1.77778"
+		v_sync = "0"
+	/>
+	<render_settings>
+		<variable name="max_anisotropy" value="16"/>
+		<variable name="texture_quality_default" value="high"/>
+	</render_settings>
+</renderer_config>

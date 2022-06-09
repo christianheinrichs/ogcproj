@@ -1,7 +1,7 @@
 @echo off
 
 rem ogcproj: fresh-start.bat
-rem Last modified on 1 June 2022
+rem Last modified on 8 June 2022
 
 rem This script empties the folders by deleting all files in them. It enables
 rem the user to have a ‘fresh start’, so they can use their own custom
@@ -154,6 +154,13 @@ echo Left 4 Dead 2: Emptying folder
 del /q "source\l4d2\*"
 
 echo Left 4 Dead 2: Done.
+echo.
+
+rem PAYDAY: The Heist
+echo PAYDAY: The Heist - Emptying folder
+del /q "payday\pdth\*"
+
+echo PAYDAY: The Heist - Done.
 echo.
 
 rem Portal

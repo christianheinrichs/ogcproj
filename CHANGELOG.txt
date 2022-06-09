@@ -43,3 +43,7 @@ Version 3.6.2022
 - Add ‘Quake II’
 - Update README files
 - Fix ‘Half-Life 2: Deathmatch’ path in install batch file
+
+Version 9.6.2022
+- Add ‘PAYDAY: The Heist’
+- Update TODO file
